@@ -1,4 +1,5 @@
 Summary:	LR parser generator for GNUstep
+Summary(pl):	Generator parserów LR dla GNUstepa
 Name:		gsantlr
 Version:	0
 %define cvs 20041118
@@ -7,7 +8,7 @@ License:	LGPL
 Group:		Libraries
 Source0:	%{name}-cvs-%{cvs}.tar.gz
 # Source0-md5:	54210525844ed1d67d45269d6cfc155b
-URL:		http://www.gnustepweb.org
+URL:		http://www.gnustepweb.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define         _prefix         /usr/%{_lib}/GNUstep
@@ -23,6 +24,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 LR parset generator for GNUstep.
+
+%description -l pl
+Generator parserów LR dla GNUstepa.
 
 %package devel
 Summary:	Header files for gsantlr library
