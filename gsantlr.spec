@@ -1,5 +1,4 @@
-Summary:	MIME library for GNUstep
-Summary(pl):	Biblioteka MIME dla ¶rodowiska GNUstep
+Summary:	LR parser generator for GNUstep
 Name:		gsantlr
 Version:	0
 %define cvs 20041118
@@ -23,6 +22,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %endif
 
 %description
+LR parset generator for GNUstep.
 
 %package devel
 Summary:	Header files for gsantlr library
