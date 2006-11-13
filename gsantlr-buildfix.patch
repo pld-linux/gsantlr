@@ -1,0 +1,21 @@
+diff -ur gsantlr-o/GNUmakefile gsantlr/GNUmakefile
+--- gsantlr-o/GNUmakefile	2004-02-26 10:03:42.000000000 -0700
++++ gsantlr/GNUmakefile	2006-11-13 14:47:25.000000000 -0700
+@@ -2,7 +2,7 @@
+ 
+ GNUSTEP_INSTALLATION_DIR = $(GNUSTEP_SYSTEM_ROOT)
+ 
+-include $(GNUSTEP_SYSTEM_ROOT)/Makefiles/common.make
++include $(GNUSTEP_MAKEFILES)/common.make
+ 
+ LIBRARY_NAME = libGSANTLR
+ 
+@@ -75,6 +75,7 @@
+ 
+ -include GNUmakefile.preamble
+ 
+-include $(GNUSTEP_SYSTEM_ROOT)/Makefiles/library.make
++include $(GNUSTEP_MAKEFILES)/library.make
++
+ 
+ -include GNUmakefile.postamble
