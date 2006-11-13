@@ -2,28 +2,20 @@ Summary:	LR parser generator for GNUstep
 Summary(pl):	Generator parserów LR dla GNUstepa
 Name:		gsantlr
 Version:	0
-%define cvs 20041118
+%define cvs 20061113
 Release:	0.%{cvs}.1
 License:	LGPL
 Group:		Libraries
 Source0:	%{name}-cvs-%{cvs}.tar.gz
-# Source0-md5:	54210525844ed1d67d45269d6cfc155b
+Patch0:	%{name}-buildfix.patch
+# Source0-md5:	486669ee86622c1c0152fa2f9d56c25c
 URL:		http://www.gnustepweb.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define         _prefix         /usr/%{_lib}/GNUstep
 
-%define		libcombo	gnu-gnu-gnu
-%define		gsos		linux-gnu
-%ifarch %{ix86}
-%define		gscpu		ix86
-%else
-# also s/alpha.*/alpha/, but we use only "alpha" arch for now
-%define		gscpu		%(echo %{_target_cpu} | sed -e 's/amd64/x86_64/;s/ppc/powerpc/')
-%endif
-
 %description
-LR parset generator for GNUstep.
+LR parser generator for GNUstep.
 
 %description -l pl
 Generator parserów LR dla GNUstepa.
@@ -42,6 +34,7 @@ Pliki nag³ówkowe biblioteki gsantlr.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
 
 %build
 . %{_prefix}/System/Library/Makefiles/GNUstep.sh
@@ -66,9 +59,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README
-%{_prefix}/System/Library/Libraries/%{gscpu}/%{gsos}/%{libcombo}/lib*.so.*
+%{_prefix}/System/Library/Libraries/lib*.so.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_prefix}/System/Library/Libraries/%{gscpu}/%{gsos}/%{libcombo}/*.so
-%{_prefix}/System/Library/Headers/%{libcombo}/*
+%{_prefix}/System/Library/Libraries/*.so
+%{_prefix}/System/Library/Headers/*
