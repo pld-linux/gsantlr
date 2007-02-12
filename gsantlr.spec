@@ -1,5 +1,5 @@
 Summary:	LR parser generator for GNUstep
-Summary(pl):	Generator parser體 LR dla GNUstepa
+Summary(pl.UTF-8):   Generator parser贸w LR dla GNUstepa
 Name:		gsantlr
 Version:	0
 %define cvs 20061113
@@ -17,20 +17,20 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 LR parser generator for GNUstep.
 
-%description -l pl
-Generator parser體 LR dla GNUstepa.
+%description -l pl.UTF-8
+Generator parser贸w LR dla GNUstepa.
 
 %package devel
 Summary:	Header files for gsantlr library
-Summary(pl):	Pliki nag丑wkowe biblioteki gsantlr
+Summary(pl.UTF-8):   Pliki nag艂贸wkowe biblioteki gsantlr
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for gsantlr library.
 
-%description devel -l pl
-Pliki nag丑wkowe biblioteki gsantlr.
+%description devel -l pl.UTF-8
+Pliki nag艂贸wkowe biblioteki gsantlr.
 
 %prep
 %setup -q -n %{name}
